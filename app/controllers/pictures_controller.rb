@@ -1,18 +1,22 @@
 class PicturesController < ApplicationController
   def new_form
+    
      render("pictures/new_form.html.erb")
   end
   
-  # def create_row
-  #     # The Parameters: {"the_source" => "hi", "the_caption" => "there"}
+  def create_row
+  # The Parameters: {"the_source" => "hi", "the_caption" => "there"}
+      p = Photo.new
       
-  #     p = Photo.new_form
-  #     p.source = params["the_source"]
-  #     p.caption = params["the_caption"]
-  #     p.save
+      p.source = params[:the_source]
+      p.caption = params[:the_caption]
       
-  #     render("pic_templates/create_row.html.erb")
-  # end
+      p.save
+      
+      @current_count = Photo.count
+      
+      render("pictures/create_row.html.erb")
+  end
   
   
   # def show
