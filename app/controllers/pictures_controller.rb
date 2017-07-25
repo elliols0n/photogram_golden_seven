@@ -18,6 +18,10 @@ class PicturesController < ApplicationController
       render("pictures/create_row.html.erb")
   end
   
+  def index
+  
+    render("pictures/index.html.erb")
+  end
   
   def show
     # Here are the Parameters: {"an_id" => "5"}
