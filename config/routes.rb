@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
   # # READ
   # get("/photos", { :controller => "pictures", :action => "index" })
-  # get("/photos/:the_id", { :controller => "pictures", :action => "show" })
+  get("/photos/:the_id", { :controller => "pictures", :action => "show" })
 
   # # UPDATE
-  # get("/photos/:an_id/edit", { :controller => "pictures", :action => "edit_form" })
-  # get("/update_photo/:some_id", { :controller => "pictures", :action => "update_row" })
+  get("/photos/:an_id/edit", { :controller => "pictures", :action => "edit_form" })
+  get("/update_photo/:some_id", { :controller => "pictures", :action => "update_row" })
 
   # # DELETE
   # get("/delete_photo/:toast_id", { :controller => "pictures", :action => "destroy_row" })

@@ -1,1 +1,17 @@
-<h1>show.html.erb</h1>
+<h1>Photo Details</h1>
+
+<p><%= @pic.caption %></p>
+
+<img src="<%= @pic.source %>">
+
+<p><%= time_ago_in_words(@pic.created_at) %> ago</p>
+
+  <button>
+    <a href="/photos">Go back</a>
+  </button>
+  <button>
+    <a href="/photos/<%= @pic.id %>/edit">Edit</a>
+  </button>
+  <button>
+    <a href="/delete_photo/<%= @pic.id %>">Delete</a>
+  </button>

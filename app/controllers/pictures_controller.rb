@@ -19,14 +19,14 @@ class PicturesController < ApplicationController
   end
   
   
-  # def show
+  def show
     # Here are the Parameters: {"an_id" => "5"}
     #  
     #Long first version
     #
-    #  the_id_number = params["an_id"]
-    #  @the_source = Photo.find(the_id_number).source
-    #  @the_caption = Photo.find(the_id_number).caption
+    # the_id = params["the_id"]
+    # @current_id_source = Photo.find(the_id).source
+    # @current_id_caption = Photo.find(the_id).caption    
     # 
     # Shorter second version
     # 
@@ -36,7 +36,13 @@ class PicturesController < ApplicationController
     #
     # Shortest last version we'll use
 
-  #   @pic = Photo.find(params["an_id"])
-  #   render("/pic_templates/show.html.erb")
-  # end
+    @pic = Photo.find(params[:the_id])
+    render("pictures/show.html.erb")
+  end
+  
+  def edit_form
+    @pic = Photo.find(params[:an_id])
+    render("pictures/edit_form.html.erb")
+  end
+  
 end
