@@ -18,11 +18,10 @@ class PicturesController < ApplicationController
       render("pictures/create_row.html.erb")
   end
   
-  # def index
-  #   @pics = Photo.find(params["the_id"])
-  #   # @show_all_pics = Photo.order(:created_at => DESC)
-  #   render("pictures/index.html.erb")
-  # end
+  def index
+     @list_of_photos = Photo.order(:created_at => :desc)
+    render("pictures/index.html.erb")
+  end
   
   def show
     # Here are the Parameters: {"an_id" => "5"}
@@ -51,13 +50,12 @@ class PicturesController < ApplicationController
   end
   
   def update_row
-    @pic = Photo.find(params["some_id"])
-      if @pic.update_attributes(some_id)
-        # Handle a successful update.
-      else
-        render 'edit'
+    @pic = Photo.find(params["the_id"])
+    pic.source = params[:the_source]
+    pic.caption = params[:the_caption]
+    pic.save
+    
     render("pictures/update_row.html.erb")
-      end
   end
   
   def destroy_row

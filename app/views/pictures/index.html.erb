@@ -1,11 +1,16 @@
 <h1>All Photos</h1>
 
-<%= @pics.each do |picture| %>
-    <div id="column1">
-        <tr>
-            <td><%= @pic.id %></td>
-        </tr>
-    </div>
+<a href="/photos/new">Add a new photo</a>
+
+<% @list_of_photos.each do |the_photo| %>
+  <div class="thumbnail">
+    <img src="<%= the_photo.source %>"></br>
+    <div class="each_photo">
+      <button><a href="/photos/<%= the_photo.id %>" class="btn btn-default btn-block">Show Details</a></button>
+      <button><a href="/photos/<%= the_photo.id %>/edit" class="btn btn-default btn-block">Edit</a></button>
+      <button><a href="/delete_photo/<%= the_photo.id %>" class="btn btn-default btn-block">Delete</a></button>
+    </div></br>
+  </div>
 <% end %>
 
 
