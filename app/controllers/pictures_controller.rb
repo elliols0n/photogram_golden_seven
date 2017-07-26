@@ -50,10 +50,12 @@ class PicturesController < ApplicationController
   end
   
   def update_row
-    @pic = Photo.find(params["the_id"])
-    pic.source = params[:the_source]
-    pic.caption = params[:the_caption]
+    pic = Photo.find(params[:some_id])
+    pic.source = params[:source]
+    pic.caption = params[:caption]
     pic.save
+    
+    @updated_pic = pic.id
     
     render("pictures/update_row.html.erb")
   end
