@@ -1,6 +1,6 @@
 <h1>Edit Photo <%= @pic.id %></h1>
 
-<form action="/create_photo">
+<form action="/update_photo/<%= @pic.id %>">
   <div>
     <label for="source_input">
       <strong>Image URL</strong>

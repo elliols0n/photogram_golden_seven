@@ -19,7 +19,8 @@ class PicturesController < ApplicationController
   end
   
   def index
-  
+    @pics = Photo.find(params["the_id"])
+    # @show_all_pics = Photo.order(:created_at => DESC)
     render("pictures/index.html.erb")
   end
   
@@ -47,6 +48,11 @@ class PicturesController < ApplicationController
   def edit_form
     @pic = Photo.find(params[:an_id])
     render("pictures/edit_form.html.erb")
+  end
+  
+  def update_row
+    @pic = Photo.find(params["some_id"])
+    render("pictures/update_row.html.erb")
   end
   
 end

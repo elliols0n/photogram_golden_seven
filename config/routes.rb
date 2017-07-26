@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # get("/", { :controller => "pictures", :action => ""})
+  get("/", { :controller => "pictures", :action => ""})
   
   # CREATE
   get("/photos/new", { :controller => "pictures", :action => "new_form" })
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get("/update_photo/:some_id", { :controller => "pictures", :action => "update_row" })
 
   # # DELETE
-  # get("/delete_photo/:toast_id", { :controller => "pictures", :action => "destroy_row" })
+  get("/delete_photo/:toast_id", { :controller => "pictures", :action => "destroy_row" })
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
