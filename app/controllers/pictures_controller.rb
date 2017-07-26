@@ -52,7 +52,18 @@ class PicturesController < ApplicationController
   
   def update_row
     @pic = Photo.find(params["some_id"])
+      if @pic.update_attributes(some_id)
+        # Handle a successful update.
+      else
+        render 'edit'
     render("pictures/update_row.html.erb")
+      end
   end
   
+  def destroy_row
+      @pic_to_delete = Photo.find(params["toast_id"])
+      @pic_to_delete.destroy
+      @current_count = Photo.count    
+      render("pictures/destroy_row.html.erb")
+  end
 end
